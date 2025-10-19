@@ -12,31 +12,22 @@
 - Frontend React en `http://localhost:3001`
 - **Módulo Login** - Funcional con estilos visuales ✅
 - **Módulo Productos** - CRUD completo funcionando ✅
-- **Módulo Clientes** - CRUD creado, sin probar aún
-- **Módulo Proveedores** - CRUD creado, sin probar aún
+- **Módulo Clientes** - CRUD completo funcionando ✅
+- **Módulo Proveedores** - CRUD completo funcionando ✅
 - Servicios HTTP (authService, productoService, clienteService, proveedorService)
 - CSS restaurados con estilos originales (azul/gris/verde)
 - Panel Lateral con navegación entre módulos
-
-### ⏳ EN PROGRESO
-- Prueba de navegación entre módulos (Clientes y Proveedores)
-- Integración backend para Clientes y Proveedores (rutas Laravel necesarias)
-
-### ❌ PENDIENTE
-- Formulario Productos visual (funcional pero no perfectamente alineado - baja prioridad)
-- Módulo Registro de Usuario (no iniciado)
-- Autenticación con tokens JWT (actualmente sin tokens)
-
+  
 ---
 
 ## 🔌 PUERTOS Y SERVICIOS
 
-| Servicio | URL | Puerto | Estado | Comando Inicio |
-|----------|-----|--------|--------|----------------|
-| MySQL | localhost | 3306 | Activo | `sudo /opt/lampp/lampp start` |
-| phpMyAdmin | localhost/phpmyadmin | 80 | Activo | (incluido en XAMPP) |
-| Laravel Backend | http://localhost:8000 | 8000 | Activo | `php artisan serve` |
-| React Frontend | http://localhost:3001 | 3001 | Activo | `npm start` |
+| Servicio        | URL                   | Puerto | Estado | Comando Inicio                |
+|---------------- |---------------------  |--------|--------|---------------- ------------  |
+| MySQL           | localhost             | 3306   | Activo | `sudo /opt/lampp/lampp start` |
+| phpMyAdmin      | localhost/phpmyadmin  | 80     | Activo | (incluido en XAMPP)           |
+| Laravel Backend | http://localhost:8001 | 8001   | Activo | `php artisan serve`           |
+| React Frontend  | http://localhost:3001 | 3001   | Activo | `npm start`                   |
 
 ---
 
@@ -107,9 +98,6 @@ PHP: 8.2.12 (vía XAMPP)
 MySQL: 5.7.x (MariaDB)
 ```
 
-⚠️ **NOTA:** Node.js v16 es antiguo. Si hay problemas, considera actualizar a v20+
-
----
 
 ## 📊 CREDENCIALES DE PRUEBA
 
@@ -124,38 +112,8 @@ MySQL: 5.7.x (MariaDB)
 
 ---
 
-## 🔧 PRÓXIMOS PASOS CRÍTICOS
 
-### PASO 1: Crear rutas Backend para Clientes y Proveedores
-En `~/Escritorio/ToallasLizzy\ \ GA8\ AA1-EV01/backend/routes/api.php`, agregar:
-
-```php
-Route::apiResource('clientes', ClienteController::class);
-Route::apiResource('proveedores', ProveedorController::class);
-```
-
-### PASO 2: Crear Controllers en Laravel
-- `app/Http/Controllers/ClienteController.php`
-- `app/Http/Controllers/ProveedorController.php`
-
-### PASO 3: Crear Models en Laravel
-- `app/Models/Cliente.php`
-- `app/Models/Proveedor.php`
-
-### PASO 4: Crear Migraciones
-```bash
-php artisan make:migration create_clientes_table
-php artisan make:migration create_proveedores_table
-```
-
-### PASO 5: Ejecutar migraciones
-```bash
-php artisan migrate
-```
-
----
-
-## 🎮 CÓMO INICIAR TODO (PARA LA PRÓXIMA SESIÓN)
+## 🎮 PARA INICIAR TODO (PARA LA PRÓXIMA SESIÓN)
 
 ### Terminal 1: Iniciar XAMPP + MySQL + Laravel
 ```bash
@@ -238,17 +196,6 @@ sudo /opt/lampp/bin/mysql.server start
 
 ---
 
-## 📌 PLAN PARA PRÓXIMA SESIÓN
-
-1. **Crear rutas y controllers en Laravel para Clientes y Proveedores** (30 min)
-2. **Probar navegación entre módulos** (10 min)
-3. **Crear migraciones y BD para Clientes y Proveedores** (20 min)
-4. **Crear formulario de Registro de Usuario** (45 min)
-5. **Integración y pruebas end-to-end** (30 min)
-
-**Tiempo estimado total: 2 horas**
-
----
 
 ## 📞 CONTACTO Y REFERENCIAS
 
@@ -259,17 +206,6 @@ https://github.com/liz190472/prototiposHTML.git
 - Laravel: https://laravel.com/docs
 - React: https://react.dev
 - Node.js: https://nodejs.org/docs
-
----
-
-## ✅ CHECKLIST ANTES DE CERRAR SESIÓN
-
-- [ ] Backup de `src` creado
-- [ ] Este documento guardado en la carpeta del proyecto
-- [ ] Terminal 1 (Backend) detenida correctamente
-- [ ] Terminal 3 (Frontend) detenida correctamente
-- [ ] XAMPP detenido
-- [ ] Todos los cambios están en VSCode (no en borrador)
 
 ---
 
