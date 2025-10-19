@@ -21,6 +21,7 @@
 ---
 
 ## 🔌 PUERTOS Y SERVICIOS
+```bash
 
 | Servicio        | URL                   | Puerto | Estado | Comando Inicio                |
 |---------------- |---------------------  |--------|--------|---------------- ------------  |
@@ -209,6 +210,3 @@ https://github.com/liz190472/prototiposHTML.git
 
 ---
 
-**Documento creado para:** No volver a empezar de ceros
-**Próxima revisión:** Próxima sesión
-**Responsable de actualizar:** Antes de cada cierre de sesión
