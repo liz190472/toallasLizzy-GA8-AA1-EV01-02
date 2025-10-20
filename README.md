@@ -7,7 +7,6 @@
 
 ---
 
-<<<<<<< HEAD
 ## 📋 Descripción del Proyecto
 
 Sistema integral de gestión empresarial desarrollado con **Laravel** (Backend API RESTful) y **React** (Frontend SPA) para la administración de productos, clientes, proveedores y autenticación de usuarios. Este proyecto implementa servicios web modernos siguiendo estándares REST y mejores prácticas de desarrollo.
@@ -43,33 +42,6 @@ Sistema integral de gestión empresarial desarrollado con **Laravel** (Backend A
 | **Gestor Node** | npm | 8.19.4+ | Node.js |
 | **Editor de Código** | Visual Studio Code | ✅ OK | - |
 | **Control de Versiones** | Git | 2.0+ | - |
-=======
-## 🎯 ESTADO ACTUAL DEL PROYECTO
-
-### ✅ COMPLETADO
-- Backend Laravel funcionando en `http://localhost:8000`
-- MySQL/MariaDB corriendo con BD `toallas_lizzy`
-- Frontend React en `http://localhost:3001`
-- **Módulo Login** - Funcional con estilos visuales ✅
-- **Módulo Productos** - CRUD completo funcionando ✅
-- **Módulo Clientes** - CRUD completo funcionando ✅
-- **Módulo Proveedores** - CRUD completo funcionando ✅
-- Servicios HTTP (authService, productoService, clienteService, proveedorService)
-- CSS restaurados con estilos originales (azul/gris/verde)
-- Panel Lateral con navegación entre módulos
-  
----
-
-## 🔌 PUERTOS Y SERVICIOS
-```bash
-
-| Servicio        | URL                   | Puerto | Estado | Comando Inicio                |
-|---------------- |---------------------  |--------|--------|---------------- ------------  |
-| MySQL           | localhost             | 3306   | Activo | `sudo /opt/lampp/lampp start` |
-| phpMyAdmin      | localhost/phpmyadmin  | 80     | Activo | (incluido en XAMPP)           |
-| Laravel Backend | http://localhost:8001 | 8001   | Activo | `php artisan serve`           |
-| React Frontend  | http://localhost:3001 | 3001   | Activo | `npm start`                   |
->>>>>>> 517e97643196ec498db8cc4b75143a0002b1369c
 
 ---
 
@@ -126,14 +98,11 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-<<<<<<< HEAD
 **Ejecutar migraciones:**
 
 ```bash
 php artisan migrate
 ```
-=======
->>>>>>> 517e97643196ec498db8cc4b75143a0002b1369c
 
 ### 4. Configurar Frontend (React)
 
@@ -155,7 +124,6 @@ REACT_APP_API_URL=http://localhost:8001/api
 
 ---
 
-<<<<<<< HEAD
 ## 🚀 Ejecutar la Aplicación
 
 Abrir **3 terminales diferentes** en el directorio raíz del proyecto:
@@ -299,10 +267,6 @@ CRUD completo para administración de proveedores.
 ## 🔧 Comandos Útiles
 
 ### Backend (Laravel)
-=======
-
-## 🎮 PARA INICIAR TODO (PARA LA PRÓXIMA SESIÓN)
->>>>>>> 517e97643196ec498db8cc4b75143a0002b1369c
 
 ```bash
 # Limpiar caché
@@ -495,7 +459,6 @@ npm start
 
 ### Problemas con CORS
 
-<<<<<<< HEAD
 Verificar que:
 - Backend esté en puerto 8001
 - `APP_URL` en `.env` backend sea correcto
@@ -512,8 +475,6 @@ Verificar que:
 5. **Base de datos:** Si hay cambios, ejecutar migraciones nuevamente
 
 ---
-=======
->>>>>>> 517e97643196ec498db8cc4b75143a0002b1369c
 
 ## 📝 Tecnologías Utilizadas
 
@@ -542,7 +503,6 @@ Verificar que:
 
 ---
 
-<<<<<<< HEAD
 ## 📄 Licencia
 
 Este proyecto es parte de un componente formativo educativo de ADSO 2025.
@@ -550,5 +510,3 @@ Este proyecto es parte de un componente formativo educativo de ADSO 2025.
 ---
 
 **Estado del Proyecto:** ✅ Funcional - CRUD completo en producción
-=======
->>>>>>> 517e97643196ec498db8cc4b75143a0002b1369c
