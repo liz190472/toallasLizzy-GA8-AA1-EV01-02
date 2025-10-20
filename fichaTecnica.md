@@ -1,53 +1,33 @@
-# FICHA TÉCNICA DE VALIDACIONES
-## Sistema de Gestión Toallas Lizzy
+# 📋 DOCUMENTACIÓN COMPLETA API - TOALLAS LIZZY
 
-**Documento:** Validaciones API  
-**Fecha:** 18 de Octubre de 2025  
-**Versión:** 1.0  
-**Autor:** Equipo Desarrollo  
-**Estado:** Completado y Probado
+**URL Base:** `http://localhost:8001/api`
 
 ---
 
-## 1. OBJETIVO
-
-Documentar todas las validaciones implementadas en los endpoints API del sistema Toallas Lizzy para garantizar integridad de datos, seguridad y consistencia en la base de datos.
+## 🔐 MÓDULO AUTENTICACIÓN
 
 ---
-
-## 2. ALCANCE
-
-- Validaciones de entrada (Frontend)
-- Validaciones en servidor (Backend/Laravel)
-- Validaciones de base de datos
-- Reglas de negocio implementadas
-
----
-
-## 3. VALIDACIONES POR MÓDULO
-
----
-
-## 3.1 AUTENTICACIÓN (AuthController)
 
 ### 3.1.1 LOGIN
 
-**Endpoint:** `POST /api/login`
+**1. Endpoint:** `POST /api/login`
 
-**Validaciones Implementadas:**
+**2. Ruta:** 
+```
+POST http://localhost:8001/api/login
+```
 
-| Campo | Regla | Tipo | Mensaje Error |
-|-------|-------|------|---------------|
-| email | Requerido | String | "El email es obligatorio" |
-| email | Formato válido | Email | "El email debe ser válido" |
-| password | Requerido | String | "La contraseña es obligatoria" |
-| password | Mínimo 6 caracteres | String | "La contraseña debe tener mínimo 6 caracteres" |
+**3. Ejemplo para Validación (Postman):**
 
-**Validación de Base de Datos:**
-- El usuario debe existir en tabla `usuarios`
-- La contraseña debe coincidir con la almacenada (hasheada)
+**Request Body:**
+```json
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+```
 
-**Respuesta Exitosa:**
+**Response Exitosa (200 OK):**
 ```json
 {
   "success": true,
@@ -59,7 +39,7 @@ Documentar todas las validaciones implementadas en los endpoints API del sistema
 }
 ```
 
-**Respuesta Error:**
+**Response Error (422):**
 ```json
 {
   "success": false,
@@ -67,13 +47,66 @@ Documentar todas las validaciones implementadas en los endpoints API del sistema
 }
 ```
 
+**4. Validaciones Implementadas:**
+
+| Campo | Regla | Tipo | Mensaje Error |
+|-------|-------|------|---------------|
+| email | Requerido | Email | "El email es obligatorio" |
+| email | Formato válido | Email | "El email debe ser válido" |
+| password | Requerido | String | "La contraseña es obligatoria" |
+| password | Mínimo 6 caracteres | String | "La contraseña debe tener mínimo 6 caracteres" |
+
+**Validación de Base de Datos:**
+- ✅ El usuario debe existir en tabla `usuarios`
+- ✅ La contraseña debe coincidir con la almacenada (hasheada con bcrypt)
+
 ---
 
 ### 3.1.2 REGISTER
 
-**Endpoint:** `POST /api/register`
+**1. Endpoint:** `POST /api/register`
 
-**Validaciones Implementadas:**
+**2. Ruta:**
+```
+POST http://localhost:8001/api/register
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request Body:**
+```json
+{
+  "nombre": "Juan Pérez",
+  "email": "juan@example.com",
+  "password": "password123"
+}
+```
+
+**Response Exitosa (201 Created):**
+```json
+{
+  "success": true,
+  "message": "Usuario registrado exitosamente",
+  "data": {
+    "id": 2,
+    "nombre": "Juan Pérez",
+    "email": "juan@example.com"
+  }
+}
+```
+
+**Response Error (422 - Email duplicado):**
+```json
+{
+  "success": false,
+  "message": "El email ya está registrado",
+  "errors": {
+    "email": ["unique"]
+  }
+}
+```
+
+**4. Validaciones Implementadas:**
 
 | Campo | Regla | Tipo | Mensaje Error |
 |-------|-------|------|---------------|
@@ -85,35 +118,40 @@ Documentar todas las validaciones implementadas en los endpoints API del sistema
 | nombre | Requerido | String | "El nombre es obligatorio" |
 
 **Encriptación:**
-- Password almacenada con bcrypt (hash)
+- ✅ Password almacenada con bcrypt (hash)
 
 ---
 
-## 3.2 PRODUCTOS (ProductoController)
+## 📦 MÓDULO PRODUCTOS
+
+---
 
 ### 3.2.1 CREATE PRODUCT
 
-**Endpoint:** `POST /api/productos`
+**1. Endpoint:** `POST /api/productos`
 
-**Validaciones Implementadas:**
+**2. Ruta:**
+```
+POST http://localhost:8001/api/productos
+```
 
-| Campo | Regla | Tipo | Restricción |
-|-------|-------|------|------------|
-| ean_producto | Requerido | String | max:50 |
-| ean_producto | Único | String | Debe ser único en BD |
-| Referencia | Requerido | String | max:100 |
-| Gramos | Opcional | Numeric | nullable |
-| Tamano | Opcional | String | max:50 |
-| Color | Opcional | String | max:50 |
-| PrecioUnitario | Requerido | Numeric | min:0.01 |
-| imagen | Opcional | File | image, max:2048KB, tipos: jpeg, png, jpg, gif, webp |
+**3. Ejemplo para Validación (Postman):**
 
-**Validación de Negocio:**
-- Precio debe ser positivo
-- EAN debe ser único (no duplicados)
-- Si hay imagen, debe guardarse en `public/imagenes/`
+**Request Body (con imagen):**
+```json
+{
+  "ean_producto": "7703347426628",
+  "Referencia": "toallaHotelera",
+  "Gramos": 500,
+  "Tamano": "70x140cm",
+  "Color": "Blanco",
+  "PrecioUnitario": 75000.00
+}
+```
 
-**Respuesta Exitosa:**
+**+ Agregar imagen en la tab "Body" → "form-data" → Key "imagen" → Type "File"**
+
+**Response Exitosa (201 Created):**
 ```json
 {
   "success": true,
@@ -122,59 +160,263 @@ Documentar todas las validaciones implementadas en los endpoints API del sistema
     "id": 5,
     "ean_producto": "7703347426628",
     "Referencia": "toallaHotelera",
-    "PrecioUnitario": 75000,
+    "Gramos": 500,
+    "Tamano": "70x140cm",
+    "Color": "Blanco",
+    "PrecioUnitario": 75000.00,
     "imagen": "/imagenes/1697651789_producto.jpg"
   }
 }
 ```
 
+**Response Error (422 - Falta EAN):**
+```json
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "ean_producto": ["The ean_producto field is required"]
+  }
+}
+```
+
+**Response Error (409 - EAN duplicado):**
+```json
+{
+  "success": false,
+  "message": "El EAN ya existe en la base de datos",
+  "errors": {
+    "ean_producto": ["unique"]
+  }
+}
+```
+
+**4. Validaciones Implementadas:**
+
+| Campo | Regla | Tipo | Restricción |
+|-------|-------|------|------------|
+| ean_producto | Requerido | String | max:50 |
+| ean_producto | Único | String | No duplicados en BD |
+| Referencia | Requerido | String | max:100 |
+| Gramos | Opcional | Numeric | nullable |
+| Tamano | Opcional | String | max:50 |
+| Color | Opcional | String | max:50 |
+| PrecioUnitario | Requerido | Numeric | min:0.01 |
+| imagen | Opcional | File | max:2048KB, tipos: jpeg, png, jpg, gif, webp |
+
+**Validaciones de Negocio:**
+- ✅ Precio debe ser positivo (>= 0.01)
+- ✅ EAN debe ser único (no duplicados)
+- ✅ Si hay imagen, se guarda en `public/imagenes/`
+
 ---
 
 ### 3.2.2 UPDATE PRODUCT
 
-**Endpoint:** `PUT /api/productos/{id}`
+**1. Endpoint:** `PUT /api/productos/{id}`
 
-**Validaciones:**
-- Todas iguales a CREATE
-- El producto debe existir (si no: error 404)
-- Si hay nueva imagen, elimina la anterior
+**2. Ruta:**
+```
+PUT http://localhost:8001/api/productos/5
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request Body:**
+```json
+{
+  "ean_producto": "7703347426628",
+  "Referencia": "toallaHoteleraActualizada",
+  "Gramos": 600,
+  "Tamano": "80x150cm",
+  "Color": "Azul",
+  "PrecioUnitario": 85000.00
+}
+```
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Producto actualizado exitosamente",
+  "data": {
+    "id": 5,
+    "ean_producto": "7703347426628",
+    "Referencia": "toallaHoteleraActualizada",
+    "PrecioUnitario": 85000.00
+  }
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Producto no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Todas iguales a CREATE PRODUCT
+- ✅ El producto debe existir (si no: error 404)
+- ✅ Si hay nueva imagen, elimina la anterior
+- ✅ EAN único excepto el del producto actual
 
 ---
 
 ### 3.2.3 DELETE PRODUCT
 
-**Endpoint:** `DELETE /api/productos/{id}`
+**1. Endpoint:** `DELETE /api/productos/{id}`
 
-**Validaciones:**
-- Producto debe existir
-- Elimina imagen asociada del servidor
-- Registra eliminación en base de datos
+**2. Ruta:**
+```
+DELETE http://localhost:8001/api/productos/5
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Producto eliminado exitosamente"
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Producto no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Producto debe existir
+- ✅ Elimina imagen asociada del servidor
+- ✅ Registra eliminación en base de datos
 
 ---
 
-## 3.3 CLIENTES (ClienteController)
+### 3.2.4 GET ALL PRODUCTS
+
+**1. Endpoint:** `GET /api/productos`
+
+**2. Ruta:**
+```
+GET http://localhost:8001/api/productos
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "ean_producto": "7703347426628",
+      "Referencia": "toallaHotelera",
+      "PrecioUnitario": 75000.00,
+      "imagen": "/imagenes/1697651789_producto.jpg"
+    },
+    {
+      "id": 2,
+      "ean_producto": "7703347426629",
+      "Referencia": "toallaPlaya",
+      "PrecioUnitario": 50000.00,
+      "imagen": null
+    }
+  ]
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Retorna todos los productos activos
+- ✅ Status 200 OK
+
+---
+
+### 3.2.5 GET PRODUCT BY ID
+
+**1. Endpoint:** `GET /api/productos/{id}`
+
+**2. Ruta:**
+```
+GET http://localhost:8001/api/productos/5
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "data": {
+    "id": 5,
+    "ean_producto": "7703347426628",
+    "Referencia": "toallaHotelera",
+    "Gramos": 500,
+    "Tamano": "70x140cm",
+    "Color": "Blanco",
+    "PrecioUnitario": 75000.00,
+    "imagen": "/imagenes/1697651789_producto.jpg"
+  }
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Producto no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ El ID debe existir en BD
+- ✅ Retorna detalles completos del producto
+
+---
+
+## 👥 MÓDULO CLIENTES
+
+---
 
 ### 3.3.1 CREATE CLIENTE
 
-**Endpoint:** `POST /api/clientes`
+**1. Endpoint:** `POST /api/clientes`
 
-**Validaciones Implementadas:**
+**2. Ruta:**
+```
+POST http://localhost:8001/api/clientes
+```
 
-| Campo | Regla | Tipo | Restricción |
-|-------|-------|------|------------|
-| nombre | Requerido | String | max:255 |
-| telefono | Requerido | String | max:255 |
-| cedula | Requerido | String | Único en BD |
-| cedula | Requerido | String | max:255 |
-| area | Opcional | String | max:255, nullable |
-| email | Requerido | Email | Único en BD |
+**3. Ejemplo para Validación (Postman):**
 
-**Validaciones de Negocio:**
-- Cédula debe ser única (no hay dos clientes con misma cédula)
-- Email debe ser único en tabla clientes
-- No se permiten espacios en blanco innecesarios (trimmed automáticamente)
+**Request Body:**
+```json
+{
+  "nombre": "Juan Pérez",
+  "telefono": "3001234567",
+  "cedula": "12345678",
+  "area": "Ventas",
+  "email": "juan@example.com"
+}
+```
 
-**Respuesta Exitosa:**
+**Response Exitosa (201 Created):**
 ```json
 {
   "success": true,
@@ -190,54 +432,262 @@ Documentar todas las validaciones implementadas en los endpoints API del sistema
 }
 ```
 
-**Errores Posibles:**
-- 422: Validación fallida (datos incompletos o inválidos)
-- 409: Cédula o email ya existen
+**Response Error (422 - Falta nombre):**
+```json
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "nombre": ["The nombre field is required"]
+  }
+}
+```
+
+**Response Error (409 - Cédula duplicada):**
+```json
+{
+  "success": false,
+  "message": "La cédula ya existe",
+  "errors": {
+    "cedula": ["unique"]
+  }
+}
+```
+
+**Response Error (409 - Email duplicado):**
+```json
+{
+  "success": false,
+  "message": "El email ya está registrado",
+  "errors": {
+    "email": ["unique"]
+  }
+}
+```
+
+**4. Validaciones Implementadas:**
+
+| Campo | Regla | Tipo | Restricción |
+|-------|-------|------|------------|
+| nombre | Requerido | String | max:255 |
+| telefono | Requerido | String | max:255 |
+| cedula | Requerido | String | Único en BD |
+| cedula | Requerido | String | max:255 |
+| area | Opcional | String | max:255, nullable |
+| email | Requerido | Email | Único en BD |
+
+**Validaciones de Negocio:**
+- ✅ Cédula debe ser única (no hay dos clientes con misma cédula)
+- ✅ Email debe ser único
+- ✅ Espacios en blanco recortados automáticamente (trim)
 
 ---
 
 ### 3.3.2 UPDATE CLIENTE
 
-**Endpoint:** `PUT /api/clientes/{id}`
+**1. Endpoint:** `PUT /api/clientes/{id}`
 
-**Validaciones:**
-- Cliente debe existir
-- Si se actualiza cédula: debe ser única (excepto la actual)
-- Si se actualiza email: debe ser único (excepto el actual)
+**2. Ruta:**
+```
+PUT http://localhost:8001/api/clientes/2
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request Body:**
+```json
+{
+  "nombre": "Juan Carlos Pérez",
+  "telefono": "3009876543",
+  "cedula": "12345678",
+  "area": "Gerencia",
+  "email": "juancarlos@example.com"
+}
+```
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Cliente actualizado exitosamente",
+  "data": {
+    "id": 2,
+    "nombre": "Juan Carlos Pérez",
+    "telefono": "3009876543",
+    "cedula": "12345678",
+    "area": "Gerencia",
+    "email": "juancarlos@example.com"
+  }
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Cliente no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Cliente debe existir
+- ✅ Si se actualiza cédula: debe ser única (excepto la actual)
+- ✅ Si se actualiza email: debe ser único (excepto el actual)
+- ✅ Validaciones de tipo y largo iguales a CREATE
 
 ---
 
 ### 3.3.3 DELETE CLIENTE
 
-**Endpoint:** `DELETE /api/clientes/{id}`
+**1. Endpoint:** `DELETE /api/clientes/{id}`
 
-**Validaciones:**
-- Cliente debe existir
-- Se elimina de forma "soft" o física según configuración
+**2. Ruta:**
+```
+DELETE http://localhost:8001/api/clientes/2
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Cliente eliminado exitosamente"
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Cliente no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Cliente debe existir
+- ✅ Se elimina de la base de datos
 
 ---
 
-## 3.4 PROVEEDORES (ProveedorController)
+### 3.3.4 GET ALL CLIENTES
+
+**1. Endpoint:** `GET /api/clientes`
+
+**2. Ruta:**
+```
+GET http://localhost:8001/api/clientes
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "nombre": "Carlos López",
+      "telefono": "3001111111",
+      "cedula": "11111111",
+      "area": "Operaciones",
+      "email": "carlos@example.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Juan Pérez",
+      "telefono": "3001234567",
+      "cedula": "12345678",
+      "area": "Ventas",
+      "email": "juan@example.com"
+    }
+  ]
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Retorna todos los clientes activos
+- ✅ Status 200 OK
+
+---
+
+### 3.3.5 GET CLIENTE BY ID
+
+**1. Endpoint:** `GET /api/clientes/{id}`
+
+**2. Ruta:**
+```
+GET http://localhost:8001/api/clientes/2
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "data": {
+    "id": 2,
+    "nombre": "Juan Pérez",
+    "telefono": "3001234567",
+    "cedula": "12345678",
+    "area": "Ventas",
+    "email": "juan@example.com"
+  }
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Cliente no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ El ID debe existir en BD
+- ✅ Retorna detalles completos del cliente
+
+---
+
+## 🏭 MÓDULO PROVEEDORES
+
+---
 
 ### 3.4.1 CREATE PROVEEDOR
 
-**Endpoint:** `POST /api/proveedores`
+**1. Endpoint:** `POST /api/proveedores`
 
-**Validaciones Implementadas:**
+**2. Ruta:**
+```
+POST http://localhost:8001/api/proveedores
+```
 
-| Campo | Regla | Tipo | Restricción |
-|-------|-------|------|------------|
-| nit | Requerido | String | Único en BD |
-| nombre | Requerido | String | max:255 |
-| correo_electronico | Requerido | Email | Único en BD |
-| numero_telefono | Opcional | String | max:255 |
+**3. Ejemplo para Validación (Postman):**
 
-**Validaciones de Negocio:**
-- NIT debe ser único
-- Email debe ser único
-- Email debe tener formato válido (usuario@dominio.com)
+**Request Body:**
+```json
+{
+  "nit": "860001158-7",
+  "nombre": "Textiles el Cóndor",
+  "correo_electronico": "contacto@textiles.com",
+  "numero_telefono": "3015698736"
+}
+```
 
-**Respuesta Exitosa:**
+**Response Exitosa (201 Created):**
 ```json
 {
   "success": true,
@@ -252,281 +702,283 @@ Documentar todas las validaciones implementadas en los endpoints API del sistema
 }
 ```
 
+**Response Error (422 - Falta NIT):**
+```json
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "nit": ["The nit field is required"]
+  }
+}
+```
+
+**Response Error (409 - NIT duplicado):**
+```json
+{
+  "success": false,
+  "message": "El NIT ya existe",
+  "errors": {
+    "nit": ["unique"]
+  }
+}
+```
+
+**Response Error (409 - Email duplicado):**
+```json
+{
+  "success": false,
+  "message": "El email ya está registrado",
+  "errors": {
+    "correo_electronico": ["unique"]
+  }
+}
+```
+
+**4. Validaciones Implementadas:**
+
+| Campo | Regla | Tipo | Restricción |
+|-------|-------|------|------------|
+| nit | Requerido | String | Único en BD |
+| nombre | Requerido | String | max:255 |
+| correo_electronico | Requerido | Email | Único en BD |
+| numero_telefono | Opcional | String | max:255 |
+
+**Validaciones de Negocio:**
+- ✅ NIT debe ser único
+- ✅ Email debe ser único
+- ✅ Email debe tener formato válido (usuario@dominio.com)
+- ✅ Espacios en blanco recortados automáticamente
+
 ---
 
 ### 3.4.2 UPDATE PROVEEDOR
 
-**Endpoint:** `PUT /api/proveedores/{id}`
+**1. Endpoint:** `PUT /api/proveedores/{id}`
 
-**Validaciones:**
-- NIT único (excepto el actual)
-- Email único (excepto el actual)
-- Proveedor debe existir
+**2. Ruta:**
+```
+PUT http://localhost:8001/api/proveedores/1
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request Body:**
+```json
+{
+  "nit": "860001158-7",
+  "nombre": "Textiles el Cóndor S.A.",
+  "correo_electronico": "ventas@textiles.com",
+  "numero_telefono": "3015698737"
+}
+```
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Proveedor actualizado exitosamente",
+  "data": {
+    "id": 1,
+    "nit": "860001158-7",
+    "nombre": "Textiles el Cóndor S.A.",
+    "correo_electronico": "ventas@textiles.com",
+    "numero_telefono": "3015698737"
+  }
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Proveedor no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ NIT único (excepto el actual)
+- ✅ Email único (excepto el actual)
+- ✅ Proveedor debe existir
+- ✅ Validaciones de tipo y largo iguales a CREATE
 
 ---
 
-## 4. VALIDACIONES COMPARTIDAS
+### 3.4.3 DELETE PROVEEDOR
 
-### 4.1 HTTP Status Codes
+**1. Endpoint:** `DELETE /api/proveedores/{id}`
 
-| Código | Significado | Validación |
-|--------|------------|-----------|
-| 200 | OK | Operación exitosa |
-| 201 | Created | Recurso creado exitosamente |
+**2. Ruta:**
+```
+DELETE http://localhost:8001/api/proveedores/1
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "message": "Proveedor eliminado exitosamente"
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Proveedor no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Proveedor debe existir
+- ✅ Se elimina de la base de datos
+
+---
+
+### 3.4.4 GET ALL PROVEEDORES
+
+**1. Endpoint:** `GET /api/proveedores`
+
+**2. Ruta:**
+```
+GET http://localhost:8001/api/proveedores
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "nit": "860001158-7",
+      "nombre": "Textiles el Cóndor",
+      "correo_electronico": "contacto@textiles.com",
+      "numero_telefono": "3015698736"
+    },
+    {
+      "id": 2,
+      "nit": "890456123-4",
+      "nombre": "Industrias Textiles Colombia",
+      "correo_electronico": "info@itc.com",
+      "numero_telefono": "3024567890"
+    }
+  ]
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ Retorna todos los proveedores activos
+- ✅ Status 200 OK
+
+---
+
+### 3.4.5 GET PROVEEDOR BY ID
+
+**1. Endpoint:** `GET /api/proveedores/{id}`
+
+**2. Ruta:**
+```
+GET http://localhost:8001/api/proveedores/1
+```
+
+**3. Ejemplo para Validación (Postman):**
+
+**Request:** (Sin body)
+
+**Response Exitosa (200 OK):**
+```json
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "nit": "860001158-7",
+    "nombre": "Textiles el Cóndor",
+    "correo_electronico": "contacto@textiles.com",
+    "numero_telefono": "3015698736"
+  }
+}
+```
+
+**Response Error (404):**
+```json
+{
+  "success": false,
+  "message": "Proveedor no encontrado"
+}
+```
+
+**4. Validaciones Implementadas:**
+
+- ✅ El ID debe existir en BD
+- ✅ Retorna detalles completos del proveedor
+
+---
+
+## 🔄 VALIDACIONES GLOBALES
+
+### HTTP Status Codes
+
+| Código | Significado | Caso |
+|--------|------------|------|
+| 200 | OK | Operación exitosa (GET, PUT, DELETE) |
+| 201 | Created | Recurso creado exitosamente (POST) |
 | 400 | Bad Request | Datos malformados en request |
 | 404 | Not Found | Recurso no existe |
-| 409 | Conflict | Violación de unicidad o constraint |
+| 409 | Conflict | Violación de unicidad |
 | 422 | Unprocessable Entity | Validación fallida |
-| 500 | Server Error | Error interno |
+| 500 | Server Error | Error interno del servidor |
 
-### 4.2 Validaciones Globales
+### Validaciones en Todas las Rutas
 
-**Todas las rutas validan:**
-- ✅ Content-Type: application/json (para POST/PUT)
-- ✅ Encoding UTF-8
-- ✅ Campos no permitidos son ignorados
-- ✅ Espacios en blanco recortados (trim)
-- ✅ Valores nulos convertidos a empty string
-
----
-
-## 5. VALIDACIONES EN FRONTEND (React)
-
-### 5.1 Validaciones Básicas
-
-**FormularioCliente.jsx:**
-```javascript
-if (!formData.nombre || !formData.telefono || !formData.cedula || !formData.email) {
-  alert('Error: Por favor complete los campos obligatorios');
-  return;
-}
-```
-
-**FormularioProducto.jsx:**
-```javascript
-if (!formData.ean_producto || !formData.Referencia || !formData.PrecioUnitario) {
-  alert('Error: Por favor complete los campos obligatorios (EAN, Referencia y Valor Unitario)');
-  return;
-}
-```
-
-### 5.2 Validaciones de Tipo
-
-- Email: Valida formato antes de enviar
-- Números: Solo acepta dígitos en campos numéricos
-- Archivos: Solo acepta imágenes (jpeg, png, jpg, gif, webp)
+✅ **Content-Type:** application/json (para POST/PUT)  
+✅ **Encoding:** UTF-8  
+✅ **Campos no permitidos:** Son ignorados  
+✅ **Espacios en blanco:** Recortados automáticamente (trim)  
+✅ **Valores nulos:** Convertidos a empty string  
 
 ---
 
-## 6. VALIDACIONES EN BASE DE DATOS
+## 📚 GUÍA RÁPIDA POSTMAN
 
-### 6.1 Restricciones de Tabla
+### 1. Crear Colección
+- Click en "Collections" → "Create New Collection"
+- Nombre: "Toallas Lizzy API"
 
-**Tabla usuarios:**
-```sql
-ALTER TABLE usuarios ADD UNIQUE KEY unique_email (email);
+### 2. Crear Variables de Entorno
+- Settings → Variables
+- Agregar: `base_url` = `http://localhost:8001/api`
+
+### 3. Crear Carpetas
+- Autenticación
+- Productos
+- Clientes
+- Proveedores
+
+### 4. Headers por Defecto
+Para todas las requests, agregar en Headers:
+```
+Content-Type: application/json
+Accept: application/json
 ```
 
-**Tabla productos:**
-```sql
-ALTER TABLE productos ADD UNIQUE KEY unique_ean (ean_producto);
+### 5. Para Requests Protegidas (si aplica)
 ```
-
-**Tabla clientes:**
-```sql
-ALTER TABLE clientes ADD UNIQUE KEY unique_cedula (cedula);
-ALTER TABLE clientes ADD UNIQUE KEY unique_email (email);
-```
-
-**Tabla proveedores:**
-```sql
-ALTER TABLE proveedores ADD UNIQUE KEY unique_nit (nit);
-ALTER TABLE proveedores ADD UNIQUE KEY unique_email (correo_electronico);
-```
-
-### 6.2 Tipos de Datos
-
-| Tabla | Campo | Tipo | Constraints |
-|-------|-------|------|------------|
-| clientes | cedula | VARCHAR(255) | UNIQUE, NOT NULL |
-| clientes | email | VARCHAR(255) | UNIQUE, NOT NULL |
-| productos | ean_producto | VARCHAR(50) | UNIQUE, NOT NULL |
-| productos | PrecioUnitario | DECIMAL(8,2) | NOT NULL |
-| proveedores | nit | VARCHAR(255) | UNIQUE, NOT NULL |
-| proveedores | correo_electronico | VARCHAR(255) | UNIQUE, NOT NULL |
-
----
-
-## 7. FLUJO DE VALIDACIÓN
-
-```
-REQUEST EN FRONTEND
-        ↓
-[Validación Frontend - Campos obligatorios, formato, tipo]
-        ↓
-ENVÍO A API (Postman/React)
-        ↓
-[Laravel - Validación con Request]
-        ↓
-[Verificar unicidad en BD]
-        ↓
-[Aplicar lógica de negocio]
-        ↓
-[Guardar en BD]
-        ↓
-RESPONSE (Success 200/201 o Error 422/409)
+Authorization: Bearer {token_recibido_en_login}
 ```
 
 ---
 
-## 8. EJEMPLOS DE ERRORES VALIDADOS
-
-### 8.1 Email Duplicado
-```
-POST /api/clientes
-Body: { "email": "test@test.com", ... }
-
-Response 409:
-{
-  "message": "El email ya está registrado",
-  "errors": { "email": ["unique"] }
-}
-```
-
-### 8.2 Cédula Duplicada
-```
-POST /api/clientes
-Body: { "cedula": "12345678", ... }
-
-Response 422:
-{
-  "message": "La cédula ya existe",
-  "errors": { "cedula": ["unique"] }
-}
-```
-
-### 8.3 Campos Faltantes
-```
-POST /api/productos
-Body: { "Referencia": "test" }  // Falta EAN y PrecioUnitario
-
-Response 422:
-{
-  "message": "Validation failed",
-  "errors": {
-    "ean_producto": ["The ean_producto field is required"],
-    "PrecioUnitario": ["The PrecioUnitario field is required"]
-  }
-}
-```
-
-### 8.4 Tipo de Dato Inválido
-```
-POST /api/productos
-Body: { "PrecioUnitario": "abc" }  // No es número
-
-Response 422:
-{
-  "message": "Validation failed",
-  "errors": {
-    "PrecioUnitario": ["The PrecioUnitario must be a number"]
-  }
-}
-```
-
----
-
-## 9. PRUEBAS REALIZADAS EN POSTMAN
-
-### 9.1 Login Exitoso ✅
-```
-POST http://localhost:8001/api/login
-Body: {
-  "email": "test@test.com",
-  "password": "password"
-}
-Resultado: 200 OK
-```
-
-### 9.2 Crear Cliente ✅
-```
-POST http://localhost:8001/api/clientes
-Body: {
-  "nombre": "Juan Pérez",
-  "telefono": "3001234567",
-  "cedula": "12345678",
-  "area": "Ventas",
-  "email": "juan@example.com"
-}
-Resultado: 201 Created
-```
-
-### 9.3 Crear Proveedor ✅
-```
-POST http://localhost:8001/api/proveedores
-Body: {
-  "nit": "860001158-7",
-  "nombre": "Textiles el Cóndor",
-  "correo_electronico": "contacto@textiles.com",
-  "numero_telefono": "3015698736"
-}
-Resultado: 201 Created
-```
-
-### 9.4 Listar Productos ✅
-```
-GET http://localhost:8001/api/productos
-Resultado: 200 OK - Array de productos
-```
-
-### 9.5 Listar Clientes ✅
-```
-GET http://localhost:8001/api/clientes
-Resultado: 200 OK - Array de clientes
-```
-
-### 9.6 Eliminar Producto ✅
-```
-DELETE http://localhost:8001/api/productos/1
-Resultado: 200 OK - Producto eliminado
-```
-
----
-
-## 10. CONCLUSIONES
-
-✅ **Todas las validaciones implementadas y funcionando correctamente**
-
-**Niveles de validación:**
-1. Frontend: Validación de UX (errores antes de enviar)
-2. API: Validación de negocio (reglas de aplicación)
-3. BD: Validación de integridad (constraints)
-
-**Seguridad:**
-- ✅ Passwords hasheadas
-- ✅ Emails y datos únicos verificados
-- ✅ Validación de tipos de datos
-- ✅ Sanitización de entrada
-
-**Integridad de Datos:**
-- ✅ Sin duplicados
-- ✅ Sin valores nulos en campos obligatorios
-- ✅ Tipos de dato consistentes
-
----
-
-## 11. REFERENCIAS
-
-**Documentación:**
-- Laravel Validation: https://laravel.com/docs/validation
-- React Form Handling: https://react.dev/reference/react-dom/components/input
-
-**Estándares:**
-- REST API: RFC 7231
-- HTTP Status Codes: RFC 7231
-
----
-
-**Documento Completado:** 18 de Octubre de 2025  
-**Verificado:** Todas las validaciones probadas en Postman  
+**Documento Verificado:** Todas las validaciones probadas ✅  
 **Estado:** APROBADO PARA PRODUCCIÓN
