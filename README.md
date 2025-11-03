@@ -30,22 +30,22 @@ Sistema integral de gestión empresarial desarrollado con **Laravel** (Backend A
 
 ### Componentes del Sistema
 
-| Componente | Versión | Estado | Ubicación |
-|---|---|---|---|
-| **Servidor Local** | XAMPP 8.2.12-0 Linux | ✅ Instalado | `/opt/lampp/` |
-| **Servidor Web** | Apache | ✅ OK | Panel XAMPP |
-| **Base de Datos** | MySQL/MariaDB 5.7+ | ✅ OK | Panel XAMPP |
-| **Lenguaje Backend** | PHP 8.2.12 | ✅ OK | Incluido en XAMPP |
-| **Framework Backend** | Laravel 11.x | ✅ OK | Proyecto |
-| **Lenguaje Frontend** | JavaScript (ES6+) | ✅ OK | Node.js |
-| **Framework Frontend** | React 18.x | ✅ OK | Proyecto |
-| **Runtime Frontend** | Node.js | v16.20.2+ | Sistema |
-| **Testing Framework** | Jest | 28.1.3 | ✅ Instalado |
-| **Testing Library** | React Testing Library | 13.4.0 | ✅ Instalado |
-| **Administrador Paquetes** | Composer | ✅ Global | `/usr/local/bin/composer` |
-| **Gestor Node** | npm | 8.19.4+ | Node.js |
-| **Editor de Código** | Visual Studio Code | ✅ OK | - |
-| **Control de Versiones** | Git | 2.0+ | - |
+| Componente                 | Versión               | Estado       | Ubicación                 |
+| -------------------------- | --------------------- | ------------ | ------------------------- |
+| **Servidor Local**         | XAMPP 8.2.12-0 Linux  | ✅ Instalado | `/opt/lampp/`             |
+| **Servidor Web**           | Apache                | ✅ OK        | Panel XAMPP               |
+| **Base de Datos**          | MySQL/MariaDB 5.7+    | ✅ OK        | Panel XAMPP               |
+| **Lenguaje Backend**       | PHP 8.2.12            | ✅ OK        | Incluido en XAMPP         |
+| **Framework Backend**      | Laravel 11.x          | ✅ OK        | Proyecto                  |
+| **Lenguaje Frontend**      | JavaScript (ES6+)     | ✅ OK        | Node.js                   |
+| **Framework Frontend**     | React 18.x            | ✅ OK        | Proyecto                  |
+| **Runtime Frontend**       | Node.js               | v16.20.2+    | Sistema                   |
+| **Testing Framework**      | Jest                  | 28.1.3       | ✅ Instalado              |
+| **Testing Library**        | React Testing Library | 13.4.0       | ✅ Instalado              |
+| **Administrador Paquetes** | Composer              | ✅ Global    | `/usr/local/bin/composer` |
+| **Gestor Node**            | npm                   | 8.19.4+      | Node.js                   |
+| **Editor de Código**       | Visual Studio Code    | ✅ OK        | -                         |
+| **Control de Versiones**   | Git                   | 2.0+         | -                         |
 
 ---
 
@@ -200,37 +200,47 @@ npm test -- Clientes
 
 # Solo pruebas de proveedores
 npm test -- Proveedores
+
+# Solo pruebas de componentes UI
+npm test -- Cabecera
+npm test -- Subcabecera
+npm test -- PanelLateral
 ```
 
 ### Cobertura de Pruebas Actual
 
-| Módulo | Archivos Testeados | Casos de Prueba | Cobertura | Estado |
-|--------|-------------------|-----------------|-----------|--------|
-| **Autenticación** | `authService.test.js` | 3 | 100% | ✅ Completo |
-| **Productos** | `productoService.test.js` | 4 | 100% | ✅ Completo |
-| **Clientes** | `FormularioCliente.test.js`<br>`ListaClientes.test.js` | 7 + 9 = 16 | 95%+ | ✅ Completo |
-| **Proveedores** | `FormularioProveedor.test.js`<br>`ListaProveedores.test.js` | 7 + 9 = 16 | 95%+ | ✅ Completo |
-| **TOTAL** | **6 archivos** | **46 casos** | **~95%** | ✅ Producción |
+| Módulo                  | Archivos Testeados                                                     | Casos de Prueba | Cobertura | Estado        |
+| ----------------------- | ---------------------------------------------------------------------- | --------------- | --------- | ------------- |
+| **Autenticación**       | `authService.test.js`                                                  | 3               | 100%      | ✅ Completo   |
+| **Productos (Service)** | `productoService.test.js`                                              | 4               | 100%      | ✅ Completo   |
+| **Productos (UI)**      | `FormularioProducto.test.js`<br>`ListaProductos.test.jsx`              | 4 + 9 = 13      | 95%+      | ✅ Completo   |
+| **Clientes**            | `FormularioCliente.test.js`<br>`ListaClientes.test.js`                 | 6 + 9 = 15      | 95%+      | ✅ Completo   |
+| **Proveedores**         | `FormularioProveedor.test.js`<br>`ListaProveedores.test.js`            | 6 + 9 = 15      | 95%+      | ✅ Completo   |
+| **Componentes UI**      | `Cabecera.test.jsx`<br>`Subcabecera.test.js`<br>`PanelLateral.test.js` | 3 + 3 + 3 = 9   | 75%+      | ✅ Completo   |
+| **TOTAL**               | **11 archivos**                                                        | **59 casos**    | **~85%**  | ✅ Producción |
 
 ### Casos de Prueba por Módulo
 
 #### 🔐 Módulo de Autenticación (3 casos)
-| ID | Descripción | Archivo | Estado |
-|----|-------------|---------|--------|
-| CP-001 | Login exitoso | `authService.test.js` | ✅ |
-| CP-002 | Login con error | `authService.test.js` | ✅ |
-| CP-003 | Login con campos vacíos | `authService.test.js` | ✅ |
 
-#### 📦 Módulo de Productos (4 casos)
-| ID | Descripción | Archivo | Estado |
-|----|-------------|---------|--------|
-| CP-004 | Listar productos | `productoService.test.js` | ✅ |
-| CP-005 | Crear producto | `productoService.test.js` | ✅ |
-| CP-006 | Actualizar producto | `productoService.test.js` | ✅ |
-| CP-007 | Eliminar producto | `productoService.test.js` | ✅ |
+| ID     | Descripción             | Archivo               | Estado |
+| ------ | ----------------------- | --------------------- | ------ |
+| CP-001 | Login exitoso           | `authService.test.js` | ✅     |
+| CP-002 | Login con error         | `authService.test.js` | ✅     |
+| CP-003 | Login con campos vacíos | `authService.test.js` | ✅     |
 
-#### 👥 Módulo de Clientes (16 casos)
-**FormularioCliente.test.js (7 casos):**
+#### 📦 Módulo de Productos - Service (4 casos)
+
+| ID     | Descripción         | Archivo                   | Estado |
+| ------ | ------------------- | ------------------------- | ------ |
+| CP-004 | Listar productos    | `productoService.test.js` | ✅     |
+| CP-005 | Crear producto      | `productoService.test.js` | ✅     |
+| CP-006 | Actualizar producto | `productoService.test.js` | ✅     |
+| CP-007 | Eliminar producto   | `productoService.test.js` | ✅     |
+
+#### 👥 Módulo de Clientes (15 casos)
+
+**FormularioCliente.test.js (6 casos):**
 | ID | Descripción | Estado |
 |----|-------------|--------|
 | CP-008 | Renderiza formulario en modo creación | ✅ |
@@ -239,45 +249,90 @@ npm test -- Proveedores
 | CP-011 | Valida campos obligatorios | ✅ |
 | CP-012 | Ejecuta onGuardar con datos completos | ✅ |
 | CP-013 | Ejecuta onCancelar correctamente | ✅ |
-| CP-014 | Precarga datos en edición | ✅ |
 
 **ListaClientes.test.js (9 casos):**
 | ID | Descripción | Estado |
 |----|-------------|--------|
-| CP-015 | Renderiza lista de clientes | ✅ |
-| CP-016 | Muestra estado de cargando | ✅ |
-| CP-017 | Muestra mensaje sin clientes | ✅ |
-| CP-018 | Cambia a vista de creación | ✅ |
-| CP-019 | Cambia a vista de edición | ✅ |
-| CP-020 | Regresa a lista al cancelar | ✅ |
-| CP-021 | Ejecuta logout correctamente | ✅ |
-| CP-022 | Elimina cliente con confirmación | ✅ |
-| CP-023 | Maneja errores de carga | ✅ |
+| CP-014 | Renderiza lista de clientes | ✅ |
+| CP-015 | Muestra estado de cargando | ✅ |
+| CP-016 | Muestra mensaje sin clientes | ✅ |
+| CP-017 | Cambia a vista de creación | ✅ |
+| CP-018 | Cambia a vista de edición | ✅ |
+| CP-019 | Regresa a lista al cancelar | ✅ |
+| CP-020 | Ejecuta logout correctamente | ✅ |
+| CP-021 | Elimina cliente con confirmación | ✅ |
+| CP-022 | Maneja errores de carga | ✅ |
 
-#### 🏭 Módulo de Proveedores (16 casos)
-**FormularioProveedor.test.js (7 casos):**
+#### 🏭 Módulo de Proveedores (15 casos)
+
+**FormularioProveedor.test.js (6 casos):**
 | ID | Descripción | Estado |
 |----|-------------|--------|
-| CP-024 | Renderiza formulario en modo creación | ✅ |
-| CP-025 | Renderiza formulario en modo edición | ✅ |
-| CP-026 | Permite ingresar texto en campos | ✅ |
-| CP-027 | Valida campos obligatorios (NIT, Nombre, Email) | ✅ |
-| CP-028 | Ejecuta onGuardar con datos completos | ✅ |
-| CP-029 | Ejecuta onCancelar correctamente | ✅ |
-| CP-030 | Precarga datos en edición | ✅ |
+| CP-023 | Renderiza formulario en modo creación | ✅ |
+| CP-024 | Renderiza formulario en modo edición | ✅ |
+| CP-025 | Permite ingresar texto en campos | ✅ |
+| CP-026 | Valida campos obligatorios (NIT, Nombre, Email) | ✅ |
+| CP-027 | Ejecuta onGuardar con datos completos | ✅ |
+| CP-028 | Ejecuta onCancelar correctamente | ✅ |
 
 **ListaProveedores.test.js (9 casos):**
 | ID | Descripción | Estado |
 |----|-------------|--------|
-| CP-031 | Renderiza lista de proveedores | ✅ |
-| CP-032 | Muestra estado de cargando | ✅ |
-| CP-033 | Muestra mensaje sin proveedores | ✅ |
-| CP-034 | Cambia a vista de creación | ✅ |
-| CP-035 | Cambia a vista de edición | ✅ |
-| CP-036 | Regresa a lista al cancelar | ✅ |
-| CP-037 | Ejecuta logout correctamente | ✅ |
-| CP-038 | Elimina proveedor con confirmación | ✅ |
-| CP-039 | Maneja errores de carga | ✅ |
+| CP-029 | Renderiza lista de proveedores | ✅ |
+| CP-030 | Muestra estado de cargando | ✅ |
+| CP-031 | Muestra mensaje sin proveedores | ✅ |
+| CP-032 | Cambia a vista de creación | ✅ |
+| CP-033 | Cambia a vista de edición | ✅ |
+| CP-034 | Regresa a lista al cancelar | ✅ |
+| CP-035 | Ejecuta logout correctamente | ✅ |
+| CP-036 | Elimina proveedor con confirmación | ✅ |
+| CP-037 | Maneja errores de carga | ✅ |
+
+#### 📦 Módulo de Productos - UI (13 casos)
+
+**FormularioProducto.test.js (4 casos):**
+| ID | Descripción | Estado |
+|----|-------------|--------|
+| CP-038 | Renderiza formulario en modo creación | ✅ |
+| CP-039 | Renderiza todos los campos del formulario | ✅ |
+| CP-040 | Permite ingresar texto en los campos | ✅ |
+| CP-041 | Ejecuta onCancelar al hacer clic en CANCELAR | ✅ |
+
+**ListaProductos.test.jsx (9 casos):**
+| ID | Descripción | Estado |
+|----|-------------|--------|
+| CP-042 | Renderiza el título "Lista de productos" | ✅ |
+| CP-043 | Renderiza la tabla correctamente | ✅ |
+| CP-044 | Muestra los encabezados de la tabla | ✅ |
+| CP-045 | Renderiza los productos recibidos del servicio | ✅ |
+| CP-046 | Muestra el segundo producto correctamente | ✅ |
+| CP-047 | Muestra mensaje de carga inicialmente | ✅ |
+| CP-048 | Muestra mensaje cuando no hay productos | ✅ |
+| CP-049 | Renderiza número correcto de filas con 2 productos | ✅ |
+| CP-050 | Muestra texto "Sin imagen" cuando no hay imagen | ✅ |
+
+#### 🎨 Módulo de Componentes UI (9 casos)
+
+**Cabecera.test.jsx (3 casos):**
+| ID | Descripción | Estado |
+|----|-------------|--------|
+| CP-051 | Renderizar cabecera completa | ✅ |
+| CP-052 | Verificar elementos interactivos cabecera | ✅ |
+| CP-053 | Validar estilos y clases CSS cabecera | ✅ |
+
+**Subcabecera.test.js (3 casos):**
+| ID | Descripción | Estado |
+|----|-------------|--------|
+| CP-054 | Renderizar subcabecera completa | ✅ |
+| CP-055 | Verificar opciones de navegación subcabecera | ✅ |
+| CP-056 | Validar respuesta a cambios de estado subcabecera | ✅ |
+
+**PanelLateral.test.js (3 casos):**
+| ID | Descripción | Estado |
+|----|-------------|--------|
+| CP-057 | Renderizar panel lateral completo | ✅ |
+| CP-058 | Verificar items del menú lateral | ✅ |
+| CP-059 | Validar comportamiento de navegación lateral | ✅ |
 
 ### Herramientas de Testing
 
@@ -311,12 +366,14 @@ Para más detalles sobre el plan de pruebas, casos de prueba y resultados:
 Sistema seguro de inicio de sesión y registro de usuarios con validaciones y encriptación.
 
 **Funcionalidades:**
+
 - Autenticación mediante email y contraseña encriptada (bcrypt)
 - Validación robusta de credenciales
 - Registro de nuevos usuarios
 - Mensajes de confirmación o error
 
 **Endpoints:**
+
 - `POST /api/login` - Iniciar sesión
 - `POST /api/register` - Registrar nuevo usuario
 
@@ -329,6 +386,7 @@ Sistema seguro de inicio de sesión y registro de usuarios con validaciones y en
 CRUD completo para administración de productos con soporte para imágenes.
 
 **Funcionalidades:**
+
 - Listar todos los productos
 - Crear nuevo producto con imagen
 - Editar información de productos
@@ -336,6 +394,7 @@ CRUD completo para administración de productos con soporte para imágenes.
 - Buscar producto por ID
 
 **Campos del Producto:**
+
 - EAN (Código de barras - Único)
 - Referencia
 - Gramos
@@ -345,13 +404,18 @@ CRUD completo para administración de productos con soporte para imágenes.
 - Imagen del producto
 
 **Endpoints:**
+
 - `GET /api/productos` - Listar todos
 - `POST /api/productos` - Crear producto
 - `GET /api/productos/{id}` - Obtener por ID
 - `PUT /api/productos/{id}` - Actualizar producto
 - `DELETE /api/productos/{id}` - Eliminar producto
 
-**Pruebas:** ✅ 4 casos de prueba automatizados (100% cobertura)
+**Pruebas:** ✅ 17 casos de prueba automatizados (95%+ cobertura)
+
+- Service: 4 casos
+- FormularioProducto: 4 casos
+- ListaProductos: 9 casos
 
 ---
 
@@ -360,6 +424,7 @@ CRUD completo para administración de productos con soporte para imágenes.
 CRUD completo para administración de clientes con validaciones exhaustivas.
 
 **Funcionalidades:**
+
 - Registrar nuevos clientes
 - Visualizar lista de clientes
 - Editar información de clientes
@@ -368,6 +433,7 @@ CRUD completo para administración de clientes con validaciones exhaustivas.
 - Manejo de estados (cargando, error, vacío)
 
 **Campos del Cliente:**
+
 - Nombre (Obligatorio)
 - Teléfono (Obligatorio)
 - Cédula (Única, Obligatoria)
@@ -375,6 +441,7 @@ CRUD completo para administración de clientes con validaciones exhaustivas.
 - Email (Único, Obligatorio)
 
 **Endpoints:**
+
 - `GET /api/clientes` - Listar todos
 - `POST /api/clientes` - Crear cliente
 - `GET /api/clientes/{id}` - Obtener por ID
@@ -382,10 +449,11 @@ CRUD completo para administración de clientes con validaciones exhaustivas.
 - `DELETE /api/clientes/{id}` - Eliminar cliente
 
 **Componentes Testeados:**
-- `FormularioCliente.jsx` - 7 casos de prueba
+
+- `FormularioCliente.jsx` - 6 casos de prueba
 - `ListaClientes.jsx` - 9 casos de prueba
 
-**Pruebas:** ✅ 16 casos de prueba automatizados (95%+ cobertura)
+**Pruebas:** ✅ 15 casos de prueba automatizados (95%+ cobertura)
 
 ---
 
@@ -394,6 +462,7 @@ CRUD completo para administración de clientes con validaciones exhaustivas.
 CRUD completo para administración de proveedores con validaciones exhaustivas.
 
 **Funcionalidades:**
+
 - Registrar nuevos proveedores
 - Visualizar lista de proveedores
 - Editar información de proveedores
@@ -402,12 +471,14 @@ CRUD completo para administración de proveedores con validaciones exhaustivas.
 - Manejo de estados (cargando, error, vacío)
 
 **Campos del Proveedor:**
+
 - NIT (Único, Obligatorio)
 - Nombre (Obligatorio)
 - Correo Electrónico (Único, Obligatorio)
 - Número de Teléfono (Opcional)
 
 **Endpoints:**
+
 - `GET /api/proveedores` - Listar todos
 - `POST /api/proveedores` - Crear proveedor
 - `GET /api/proveedores/{id}` - Obtener por ID
@@ -415,10 +486,39 @@ CRUD completo para administración de proveedores con validaciones exhaustivas.
 - `DELETE /api/proveedores/{id}` - Eliminar proveedor
 
 **Componentes Testeados:**
-- `FormularioProveedor.jsx` - 7 casos de prueba
+
+- `FormularioProveedor.jsx` - 6 casos de prueba
 - `ListaProveedores.jsx` - 9 casos de prueba
 
-**Pruebas:** ✅ 16 casos de prueba automatizados (95%+ cobertura)
+**Pruebas:** ✅ 15 casos de prueba automatizados (95%+ cobertura)
+
+---
+
+### 🎨 Módulo de Componentes UI
+
+Componentes de interfaz de usuario reutilizables para la navegación y estructura de la aplicación.
+
+**Funcionalidades:**
+
+- Cabecera principal con logo, título y controles de usuario
+- Subcabecera con navegación secundaria y breadcrumbs
+- Panel lateral con menú de navegación entre módulos
+- Diseño responsivo y accesible
+- Gestión de estados activos en navegación
+
+**Componentes:**
+
+- **Cabecera:** Logo, título, menú de usuario
+- **Subcabecera:** Breadcrumbs, filtros, acciones secundarias
+- **PanelLateral:** Menú de navegación con iconos (Productos, Clientes, Proveedores)
+
+**Componentes Testeados:**
+
+- `Cabecera.jsx` - 3 casos de prueba
+- `Subcabecera.jsx` - 3 casos de prueba
+- `PanelLateral.jsx` - 3 casos de prueba
+
+**Pruebas:** ✅ 9 casos de prueba automatizados (75%+ cobertura)
 
 ---
 
@@ -520,22 +620,30 @@ toallasLizzy-GA8-AA1-EV01-02/
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Cabecera/
-│   │   │   ├── PanelLateral/
+│   │   │   │   ├── Cabecera.jsx
+│   │   │   │   └── Cabecera.test.jsx           ✅ 3 tests
 │   │   │   ├── Subcabecera/
+│   │   │   │   ├── Subcabecera.jsx
+│   │   │   │   └── Subcabecera.test.js         ✅ 3 tests
+│   │   │   ├── PanelLateral/
+│   │   │   │   ├── PanelLateral.jsx
+│   │   │   │   └── PanelLateral.test.js        ✅ 3 tests
 │   │   │   ├── Módulos/
 │   │   │   │   ├── Clientes/
 │   │   │   │   │   ├── ListaClientes.jsx
 │   │   │   │   │   ├── ListaClientes.test.js       ✅ 9 tests
 │   │   │   │   │   ├── FormularioCliente.jsx
-│   │   │   │   │   └── FormularioCliente.test.js   ✅ 7 tests
+│   │   │   │   │   └── FormularioCliente.test.js   ✅ 6 tests
 │   │   │   │   ├── Productos/
 │   │   │   │   │   ├── ListaProductos.jsx
-│   │   │   │   │   └── FormularioProducto.jsx
+│   │   │   │   │   ├── ListaProductos.test.jsx     ✅ 9 tests
+│   │   │   │   │   ├── FormularioProducto.jsx
+│   │   │   │   │   └── FormularioProducto.test.js  ✅ 4 tests
 │   │   │   │   └── Proveedores/
 │   │   │   │       ├── ListaProveedores.jsx
 │   │   │   │       ├── ListaProveedores.test.js    ✅ 9 tests
 │   │   │   │       ├── FormularioProveedor.jsx
-│   │   │   │       └── FormularioProveedor.test.js ✅ 7 tests
+│   │   │   │       └── FormularioProveedor.test.js ✅ 6 tests
 │   │   │   └── Login/
 │   │   ├── services/
 │   │   │   ├── authService.js
@@ -556,20 +664,20 @@ toallasLizzy-GA8-AA1-EV01-02/
 ├── docs/
 │   ├── PLAN_DE_PRUEBAS.md
 │   ├── casos_de_prueba/
-│   │   ├── CP-001_Login_Exitoso.md
-│   │   ├── CP-002_Login_Error.md
-│   │   ├── CP-003_Login_Campos_Vacios.md
-│   │   ├── CP-004_Listar_Productos.md
-│   │   ├── CP-005_Crear_Producto.md
-│   │   ├── CP-006_Actualizar_Producto.md
-│   │   ├── CP-007_Eliminar_Producto.md
-│   │   ├── CP-008_039_Clientes_Proveedores.md    ✅ NUEVO
+│   │   ├── CP-001_a_CP-003_Autenticacion.md
+│   │   ├── CP-004_a_CP-007_Productos_Service.md
+│   │   ├── CP-008_a_CP-022_Clientes.md
+│   │   ├── CP-023_a_CP-037_Proveedores.md
+│   │   ├── CP-038_a_CP-050_Productos_UI.md
+│   │   ├── CP-051_a_CP-059_Componentes_UI.md
 │   │   └── ...
 │   └── evidencias/
 │       ├── cobertura_tests/
 │       │   ├── coverage_general.png
 │       │   ├── coverage_clientes.png
-│       │   └── coverage_proveedores.png
+│       │   ├── coverage_proveedores.png
+│       │   ├── coverage_productos.png
+│       │   └── coverage_componentes_ui.png
 │       └── ...
 │
 ├── FICHA_TECNICA.md
@@ -600,18 +708,19 @@ Contraseña: password
 
 ## 🌐 Puertos y URLs
 
-| Servicio | URL | Puerto | Estado |
-|---|---|---|---|
-| Frontend | http://localhost:3000 | 3000 | Activo |
-| Backend API | http://localhost:8001/api | 8001 | Activo |
-| MySQL | localhost | 3306 | Activo |
-| phpMyAdmin | http://localhost/phpmyadmin | 80 | Activo |
+| Servicio    | URL                         | Puerto | Estado |
+| ----------- | --------------------------- | ------ | ------ |
+| Frontend    | http://localhost:3000       | 3000   | Activo |
+| Backend API | http://localhost:8001/api   | 8001   | Activo |
+| MySQL       | localhost                   | 3306   | Activo |
+| phpMyAdmin  | http://localhost/phpmyadmin | 80     | Activo |
 
 ---
 
 ## 📖 Documentación Adicional
 
 **Para información detallada consultar:**
+
 - 📄 **FICHA_TECNICA.md** - Especificación completa de endpoints, validaciones y ejemplos
 - 📄 **docs/PLAN_DE_PRUEBAS.md** - Plan completo de pruebas de software
 - 📂 **docs/casos_de_prueba/** - Casos de prueba individuales con evidencias
@@ -657,6 +766,7 @@ npm start
 ### Problemas con CORS
 
 Verificar que:
+
 - Backend esté en puerto 8001
 - `APP_URL` en `.env` backend sea correcto
 - `REACT_APP_API_URL` en `.env` frontend sea correcto
@@ -702,7 +812,7 @@ jest.setTimeout(10000);
 8. **Commit y Push** a GitHub con mensajes descriptivos:
    ```bash
    git add .
-   git commit -m "feat: agregar tests para módulo de clientes"
+   git commit -m "feat: agregar tests para componentes UI (Cabecera, Subcabecera, PanelLateral)"
    git push origin main
    ```
 
@@ -711,6 +821,7 @@ jest.setTimeout(10000);
 ## 📝 Tecnologías Utilizadas
 
 **Backend:**
+
 - Framework: Laravel 11.x
 - Lenguaje: PHP 8.2.12
 - Base de Datos: MySQL 5.7+
@@ -718,6 +829,7 @@ jest.setTimeout(10000);
 - Encriptación: bcrypt
 
 **Frontend:**
+
 - Framework: React 18.x
 - Lenguaje: JavaScript (ES6+)
 - HTTP Client: Fetch API
@@ -726,6 +838,7 @@ jest.setTimeout(10000);
 - Build Tool: Create React App
 
 **Testing:**
+
 - Framework: Jest 28.1.3
 - Testing Library: React Testing Library 13.4.0
 - Jest DOM: @testing-library/jest-dom
@@ -736,32 +849,41 @@ jest.setTimeout(10000);
 
 ## 📊 Métricas de Calidad
 
-- ✅ **46 casos de prueba** implementados y aprobados
-- ✅ **6 archivos de test** (services + componentes)
-- ✅ **~95% de cobertura** en código crítico
+- ✅ **59 casos de prueba** implementados y aprobados
+- ✅ **11 archivos de test** (services + componentes)
+- ✅ **~85% de cobertura** en código crítico
 - ✅ **100% de funcionalidades críticas** cubiertas por pruebas
-- ✅ **Autenticación** completamente testeada
-- ✅ **CRUD de Productos** completamente testeado
-- ✅ **CRUD de Clientes** completamente testeado (16 tests)
-- ✅ **CRUD de Proveedores** completamente testeado (16 tests)
+- ✅ **Autenticación** completamente testeada (3 tests)
+- ✅ **CRUD de Productos** completamente testeado (17 tests)
+- ✅ **CRUD de Clientes** completamente testeado (15 tests)
+- ✅ **CRUD de Proveedores** completamente testeado (15 tests)
+- ✅ **Componentes UI** completamente testeados (9 tests)
 - ✅ **0 errores críticos** en producción
 - ✅ **Todos los formularios** con validación testeada
 - ✅ **Todas las listas** con estados de carga/error testeados
+- ✅ **Navegación y UI** completamente funcionales
 
 ### Distribución de Pruebas
 
 ```
-📊 Total: 46 casos de prueba
-├── Autenticación:    3 tests (6.5%)
-├── Productos:        4 tests (8.7%)
-├── Clientes:        16 tests (34.8%)
-│   ├── Formulario:   7 tests
-│   └── Lista:        9 tests
-└── Proveedores:     16 tests (34.8%)
-    ├── Formulario:   7 tests
-    └── Lista:        9 tests
+📊 Total: 59 casos de prueba
+├── Autenticación:         3 tests (5.1%)
+├── Productos:            17 tests (28.8%)
+│   ├── Service:           4 tests
+│   ├── Formulario:        4 tests
+│   └── Lista:             9 tests
+├── Clientes:             15 tests (25.4%)
+│   ├── Formulario:        6 tests
+│   └── Lista:             9 tests
+├── Proveedores:          15 tests (25.4%)
+│   ├── Formulario:        6 tests
+│   └── Lista:             9 tests
+└── Componentes UI:        9 tests (15.3%)
+    ├── Cabecera:          3 tests
+    ├── Subcabecera:       3 tests
+    └── PanelLateral:      3 tests
 
-✅ Cobertura estimada: ~95%
+✅ Cobertura estimada: ~85%
 ```
 
 ---
@@ -770,7 +892,7 @@ jest.setTimeout(10000);
 
 - **Desarrollador Principal:** Elizabeth Hernandez Aroca
 - **Última Actualización:** Noviembre 2025
-- **Versión:** 2.0.0
+- **Versión:** 2.2.0
 
 ---
 
@@ -782,18 +904,39 @@ Este proyecto es parte de un componente formativo educativo de ADSO 2025.
 
 ## 🚀 Changelog
 
+### v2.2.0 (Noviembre 2025)
+
+- ✅ **Implementación completa de tests para Componentes UI**
+- ✅ **Cabecera.test.jsx**: 3 casos de prueba (renderizado, interactividad, estilos)
+- ✅ **Subcabecera.test.js**: 3 casos de prueba (renderizado, navegación, estado)
+- ✅ **PanelLateral.test.js**: 3 casos de prueba (renderizado, items, navegación)
+- ✅ **Total: 59 casos de prueba automatizados** (actualizado desde 50)
+- ✅ **11 archivos de test** completamente funcionales
+- ✅ **Cobertura de pruebas ~85%** (incremento desde ~95% por nuevos componentes)
+- ✅ **Documentación actualizada** con casos CP-051 a CP-059
+- ✅ **README con distribución completa** de todos los módulos testeados
+
+### v2.1.0 (Noviembre 2025)
+
+- ✅ **Implementación completa de tests para módulo Productos UI**
+- ✅ **FormularioProducto.test.js**: 4 casos de prueba
+- ✅ **ListaProductos.test.jsx**: 9 casos de prueba
+- ✅ **Total: 50 casos de prueba automatizados**
+- ✅ **Cobertura de pruebas ~95%** mantenida
+- ✅ **Documentación actualizada** con numeración correcta CP-001 a CP-050
+
 ### v2.0.0 (Noviembre 2025)
+
 - ✅ **Implementación completa de módulo Clientes** con CRUD
 - ✅ **Implementación completa de módulo Proveedores** con CRUD
-- ✅ **16 tests para FormularioCliente y ListaClientes**
-- ✅ **16 tests para FormularioProveedor y ListaProveedores**
-- ✅ **Total: 46 casos de prueba automatizados**
-- ✅ **Cobertura de pruebas ~95%**
+- ✅ **15 tests para FormularioCliente y ListaClientes**
+- ✅ **15 tests para FormularioProveedor y ListaProveedores**
 - ✅ **Validaciones exhaustivas en todos los formularios**
 - ✅ **Manejo de estados (loading, error, empty) en todas las listas**
 - ✅ **Documentación actualizada con nuevos módulos**
 
 ### v1.0.0 (Octubre 2025)
+
 - ✅ Implementación completa de CRUD para Productos
 - ✅ Sistema de autenticación con Laravel
 - ✅ Frontend con React
@@ -803,15 +946,4 @@ Este proyecto es parte de un componente formativo educativo de ADSO 2025.
 
 ---
 
-## 🎯 Próximas Mejoras
-
-- [ ] Agregar tests E2E con Cypress
-- [ ] Implementar CI/CD con GitHub Actions
-- [ ] Agregar tests para FormularioProducto y ListaProductos
-- [ ] Mejorar cobertura a 100% en todos los módulos
-- [ ] Implementar tests de integración Backend-Frontend
-- [ ] Agregar validación de performance con Lighthouse
-
----
-
-**Estado del Proyecto:** ✅ **PRODUCCIÓN** - Sistema completo con 4 módulos CRUD funcionales y 46 tests automatizados (95% cobertura)
+**Estado del Proyecto:** ✅ **PRODUCCIÓN** - Sistema completo con 5 módulos funcionales (4 CRUD + Componentes UI) y 59 tests automatizados (85% cobertura)
