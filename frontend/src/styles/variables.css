@@ -1,0 +1,7 @@
+:root {
+  --color-primario: rgba(36, 104, 131, 0.9);
+  --color-secundario: rgba(125, 125, 125, 0.5);
+  --color-exito: #00AA00;
+  --fuente-principal: Verdana, Geneva, Tahoma, sans-serif;
+  --padding-contenedor: 5%;
+}

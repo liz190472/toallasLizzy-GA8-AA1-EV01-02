@@ -1,0 +1,117 @@
+.cabecera {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(36, 104, 131, 0.9);
+  color: white;
+}
+
+h1 {
+  padding: 1% 5%;
+  margin: 0;
+}
+
+.cabeceraRegistroUsuario {
+  background-color: rgba(125, 125, 125, 0.5);
+  padding: 0.5% 40%;
+  font-size: 70%;
+}
+
+.panelFormulario {
+  display: flex;
+  flex-direction: row;
+}
+
+.panelLateral {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(125, 125, 125, 0.5);
+  padding: 0 2%;
+  min-width: 150px;
+}
+
+.botonPanel {
+  margin: 9px;
+  padding: 10px 5px;
+  background-color: rgba(150, 150, 150, 0.6);
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botonPanel:hover {
+  background-color: rgba(150, 150, 150, 0.8);
+}
+
+.form {
+  margin: 1% 5%;
+  font-size: 80%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.form input,
+.form textarea,
+.form select {
+  background-color: rgba(125, 125, 125, 0.2);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filaFormulario {
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  flex: 1;
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botonCrear {
+  background-color: rgba(0, 180, 0, 0.7);
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botonCrear:hover {
+  background-color: rgba(0, 180, 0, 0.9);
+}
+
+.botonCancelar {
+  background-color: rgba(200, 50, 50, 0.7);
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botonCancelar:hover {
+  background-color: rgba(200, 50, 50, 0.9);
+}

@@ -1,0 +1,1553 @@
+
+> project.reactjs@0.1.0 test
+> jest
+
+FAIL src/components/Módulos/Proveedores/ListaProveedores.test.jsx
+  ● Componente ListaProveedores › renderiza la lista de proveedores correctamente
+
+    TestingLibraryElementError: Unable to find an element with the text: Distribuidora XYZ. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mdata-testid[39m=[32m"subcabecera"[39m
+          [36m>[39m
+            [0mLista Proveedores[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"container"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;"[39m
+            [36m>[39m
+              [36m<h2>[39m
+                [0mLISTADO PROVEEDORES[0m
+              [36m</h2>[39m
+              [36m<button[39m
+                [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); padding: 10px 20px; color: white; border-radius: 4px; cursor: pointer; font-weight: bold;"[39m
+              [36m>[39m
+                [0mCerrar sesión[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"botonCrear"[39m
+            [36m>[39m
+              [0mCREAR[0m
+            [36m</button>[39m
+            [36m<p>[39m
+              [0mCargando proveedores...[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      51 |     });
+      52 |
+    > 53 |     expect(screen.getByText('Distribuidora XYZ')).toBeInTheDocument();
+         |                   ^
+      54 |     expect(screen.getByText('Proveedor ABC')).toBeInTheDocument();
+      55 |     expect(screen.getByText('900123456-7')).toBeInTheDocument();
+      56 |     expect(screen.getByText('contacto@xyz.com')).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at getByText (src/components/Módulos/Proveedores/ListaProveedores.test.jsx:53:19)
+      at Generator.call (src/components/Módulos/Proveedores/ListaProveedores.test.jsx:2:1)
+      at Generator._invoke [as next] (src/components/Módulos/Proveedores/ListaProveedores.test.jsx:2:1)
+      at asyncGeneratorStep (src/components/Módulos/Proveedores/ListaProveedores.test.jsx:2:1)
+      at asyncGeneratorStep (src/components/Módulos/Proveedores/ListaProveedores.test.jsx:2:1)
+
+FAIL src/components/Módulos/Clientes/FormularioCliente.test.jsx
+  ● Componente FormularioCliente › renderiza el formulario en modo creación con todos los campos
+
+    TestingLibraryElementError: Found multiple elements with the text: /CREAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mCrear Cliente[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mCREAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mCrear Cliente[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Cliente[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Ingrese nombre"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"telefono"[39m
+                    [33mname[39m=[32m"telefono"[39m
+                    [33mplaceholder[39m=[32m"Ingrese teléfono"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"cedula"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mCédula: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"cedula"[39m
+                    [33mname[39m=[32m"cedula"[39m
+                    [33mplaceholder[39m=[32m"Ingrese cédula"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"area"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mÁrea:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"area"[39m
+                    [33mname[39m=[32m"area"[39m
+                    [33mplaceholder[39m=[32m"Ingrese área"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mfor[39m=[32m"email"[39m
+                  [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                [36m>[39m
+                  [0mEmail: *[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mid[39m=[32m"email"[39m
+                  [33mname[39m=[32m"email"[39m
+                  [33mplaceholder[39m=[32m"Ingrese email"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mCREAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      26 |
+      27 |     // Verifica botones
+    > 28 |     expect(screen.getByText(/CREAR/i)).toBeInTheDocument();
+         |                   ^
+      29 |     expect(screen.getByText(/CANCELAR/i)).toBeInTheDocument();
+      30 |   });
+      31 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Clientes/FormularioCliente.test.jsx:28:19)
+
+  ● Componente FormularioCliente › renderiza el formulario en modo edición con datos precargados
+
+    TestingLibraryElementError: Found multiple elements with the text: /EDITAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mEditar Cliente[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mEDITAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mEditar Cliente[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Cliente[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Ingrese nombre"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"Juan Pérez"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"telefono"[39m
+                    [33mname[39m=[32m"telefono"[39m
+                    [33mplaceholder[39m=[32m"Ingrese teléfono"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"3001234567"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"cedula"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mCédula: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"cedula"[39m
+                    [33mname[39m=[32m"cedula"[39m
+                    [33mplaceholder[39m=[32m"Ingrese cédula"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"123456789"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"area"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mÁrea:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"area"[39m
+                    [33mname[39m=[32m"area"[39m
+                    [33mplaceholder[39m=[32m"Ingrese área"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"Ventas"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mfor[39m=[32m"email"[39m
+                  [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                [36m>[39m
+                  [0mEmail: *[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mid[39m=[32m"email"[39m
+                  [33mname[39m=[32m"email"[39m
+                  [33mplaceholder[39m=[32m"Ingrese email"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m"juan@example.com"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mEDITAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      58 |
+      59 |     // Verifica botón de editar
+    > 60 |     expect(screen.getByText(/EDITAR/i)).toBeInTheDocument();
+         |                   ^
+      61 |   });
+      62 |
+      63 |   test('permite ingresar texto en todos los campos del formulario', () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Clientes/FormularioCliente.test.jsx:60:19)
+
+  ● Componente FormularioCliente › muestra alerta cuando faltan campos obligatorios al enviar
+
+    TestingLibraryElementError: Found multiple elements with the text: /CREAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mCrear Cliente[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mCREAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mCrear Cliente[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Cliente[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Ingrese nombre"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"telefono"[39m
+                    [33mname[39m=[32m"telefono"[39m
+                    [33mplaceholder[39m=[32m"Ingrese teléfono"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"cedula"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mCédula: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"cedula"[39m
+                    [33mname[39m=[32m"cedula"[39m
+                    [33mplaceholder[39m=[32m"Ingrese cédula"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"area"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mÁrea:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"area"[39m
+                    [33mname[39m=[32m"area"[39m
+                    [33mplaceholder[39m=[32m"Ingrese área"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mfor[39m=[32m"email"[39m
+                  [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                [36m>[39m
+                  [0mEmail: *[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mid[39m=[32m"email"[39m
+                  [33mname[39m=[32m"email"[39m
+                  [33mplaceholder[39m=[32m"Ingrese email"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mCREAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      84 |     render(<FormularioCliente onGuardar={mockOnGuardar} onCancelar={mockOnCancelar} />);
+      85 |
+    > 86 |     const botonCrear = screen.getByText(/CREAR/i);
+         |                               ^
+      87 |     fireEvent.click(botonCrear);
+      88 |
+      89 |     expect(window.alert).toHaveBeenCalledWith('Error: Por favor complete los campos obligatorios');
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Clientes/FormularioCliente.test.jsx:86:31)
+
+  ● Componente FormularioCliente › ejecuta onGuardar con datos completos al enviar el formulario
+
+    TestingLibraryElementError: Found multiple elements with the text: /CREAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mCrear Cliente[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mCREAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mCrear Cliente[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Cliente[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Ingrese nombre"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"Carlos Ruiz"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"telefono"[39m
+                    [33mname[39m=[32m"telefono"[39m
+                    [33mplaceholder[39m=[32m"Ingrese teléfono"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"3201234567"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"cedula"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mCédula: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"cedula"[39m
+                    [33mname[39m=[32m"cedula"[39m
+                    [33mplaceholder[39m=[32m"Ingrese cédula"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"111222333"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"area"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mÁrea:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"area"[39m
+                    [33mname[39m=[32m"area"[39m
+                    [33mplaceholder[39m=[32m"Ingrese área"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mfor[39m=[32m"email"[39m
+                  [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                [36m>[39m
+                  [0mEmail: *[0m
+                [36m</label>[39m
+                [36m<input[39m
+                  [33mid[39m=[32m"email"[39m
+                  [33mname[39m=[32m"email"[39m
+                  [33mplaceholder[39m=[32m"Ingrese email"[39m
+                  [33mrequired[39m=[32m""[39m
+                  [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                  [33mtype[39m=[32m"email"[39m
+                  [33mvalue[39m=[32m"carlos@test.com"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mCREAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      107 |     });
+      108 |
+    > 109 |     const form = screen.getByText(/CREAR/i).closest('form');
+          |                         ^
+      110 |     fireEvent.submit(form);
+      111 |
+      112 |     expect(mockOnGuardar).toHaveBeenCalledWith({
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Clientes/FormularioCliente.test.jsx:109:25)
+
+FAIL src/components/Módulos/Clientes/ListaClientes.test.jsx
+  ● Componente ListaClientes › renderiza la lista de clientes correctamente
+
+    TestingLibraryElementError: Unable to find an element with the text: Juan Pérez. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mdata-testid[39m=[32m"subcabecera"[39m
+          [36m>[39m
+            [0mLista Clientes[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"container"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;"[39m
+            [36m>[39m
+              [36m<h2>[39m
+                [0mLISTADO CLIENTES[0m
+              [36m</h2>[39m
+              [36m<button[39m
+                [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); padding: 10px 20px; color: white; border-radius: 4px; cursor: pointer; font-weight: bold;"[39m
+              [36m>[39m
+                [0mCerrar sesión[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"botonCrear"[39m
+            [36m>[39m
+              [0mCREAR[0m
+            [36m</button>[39m
+            [36m<p>[39m
+              [0mCargando clientes...[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      39 |     });
+      40 |
+    > 41 |     expect(screen.getByText('Juan Pérez')).toBeInTheDocument();
+         |                   ^
+      42 |     expect(screen.getByText('María López')).toBeInTheDocument();
+      43 |     expect(screen.getByText('123456')).toBeInTheDocument();
+      44 |     expect(screen.getByText('3001234567')).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at getByText (src/components/Módulos/Clientes/ListaClientes.test.jsx:41:19)
+      at Generator.call (src/components/Módulos/Clientes/ListaClientes.test.jsx:2:1)
+      at Generator._invoke [as next] (src/components/Módulos/Clientes/ListaClientes.test.jsx:2:1)
+      at asyncGeneratorStep (src/components/Módulos/Clientes/ListaClientes.test.jsx:2:1)
+      at asyncGeneratorStep (src/components/Módulos/Clientes/ListaClientes.test.jsx:2:1)
+
+FAIL src/components/Módulos/Proveedores/FormularioProveedor.test.jsx
+  ● Componente FormularioProveedor › renderiza el formulario en modo creación con todos los campos
+
+    TestingLibraryElementError: Found multiple elements with the text: /CREAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mCrear Proveedor[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mCREAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mCrear Proveedor[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Proveedor[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nit"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNIT: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nit"[39m
+                    [33mname[39m=[32m"nit"[39m
+                    [33mplaceholder[39m=[32m"NIT del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Nombre de la empresa"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"correo_electronico"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mEmail: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"correo_electronico"[39m
+                    [33mname[39m=[32m"correo_electronico"[39m
+                    [33mplaceholder[39m=[32m"Email del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"numero_telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"numero_telefono"[39m
+                    [33mname[39m=[32m"numero_telefono"[39m
+                    [33mplaceholder[39m=[32m"Número de teléfono"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mCREAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      22 |     expect(screen.getByPlaceholderText(/Número de teléfono/i)).toBeInTheDocument();
+      23 |
+    > 24 |     expect(screen.getByText(/CREAR/i)).toBeInTheDocument();
+         |                   ^
+      25 |     expect(screen.getByText(/CANCELAR/i)).toBeInTheDocument();
+      26 |   });
+      27 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Proveedores/FormularioProveedor.test.jsx:24:19)
+
+  ● Componente FormularioProveedor › renderiza el formulario en modo edición con datos precargados
+
+    TestingLibraryElementError: Found multiple elements with the text: /EDITAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mEditar Proveedor[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mEDITAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mEditar Proveedor[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Proveedor[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nit"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNIT: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nit"[39m
+                    [33mname[39m=[32m"nit"[39m
+                    [33mplaceholder[39m=[32m"NIT del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"900123456-7"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Nombre de la empresa"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"Distribuidora XYZ"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"correo_electronico"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mEmail: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"correo_electronico"[39m
+                    [33mname[39m=[32m"correo_electronico"[39m
+                    [33mplaceholder[39m=[32m"Email del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m"contacto@xyz.com"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"numero_telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"numero_telefono"[39m
+                    [33mname[39m=[32m"numero_telefono"[39m
+                    [33mplaceholder[39m=[32m"Número de teléfono"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"6011234567"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mEDITAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      49 |     expect(screen.getByDisplayValue('6011234567')).toBeInTheDocument();
+      50 |
+    > 51 |     expect(screen.getByText(/EDITAR/i)).toBeInTheDocument();
+         |                   ^
+      52 |   });
+      53 |
+      54 |   test('permite ingresar texto en todos los campos del formulario', () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Proveedores/FormularioProveedor.test.jsx:51:19)
+
+  ● Componente FormularioProveedor › muestra alerta cuando faltan campos obligatorios al enviar
+
+    TestingLibraryElementError: Found multiple elements with the text: /CREAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mCrear Proveedor[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mCREAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mCrear Proveedor[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Proveedor[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nit"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNIT: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nit"[39m
+                    [33mname[39m=[32m"nit"[39m
+                    [33mplaceholder[39m=[32m"NIT del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Nombre de la empresa"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"correo_electronico"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mEmail: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"correo_electronico"[39m
+                    [33mname[39m=[32m"correo_electronico"[39m
+                    [33mplaceholder[39m=[32m"Email del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"numero_telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"numero_telefono"[39m
+                    [33mname[39m=[32m"numero_telefono"[39m
+                    [33mplaceholder[39m=[32m"Número de teléfono"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mCREAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      75 |     render(<FormularioProveedor onGuardar={mockOnGuardar} onCancelar={mockOnCancelar} />);
+      76 |
+    > 77 |     const botonCrear = screen.getByText(/CREAR/i);
+         |                               ^
+      78 |     fireEvent.click(botonCrear);
+      79 |
+      80 |     expect(window.alert).toHaveBeenCalledWith('Error: Por favor complete los campos obligatorios (NIT, Nombre y Email)');
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Proveedores/FormularioProveedor.test.jsx:77:31)
+
+  ● Componente FormularioProveedor › ejecuta onGuardar con datos completos al enviar el formulario
+
+    TestingLibraryElementError: Found multiple elements with the text: /CREAR/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<h2[39m
+      [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+    [36m>[39m
+      [0mCrear Proveedor[0m
+    [36m</h2>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<button[39m
+      [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+      [33mtype[39m=[32m"submit"[39m
+    [36m>[39m
+      [0mCREAR[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"padding: 20px; background-color: rgb(244, 244, 244); min-height: 100vh;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: white; border-radius: 10px; padding: 40px; max-width: 1000px; margin: 0px auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mstyle[39m=[32m"margin-bottom: 30px; font-size: 28px; font-weight: bold;"[39m
+            [36m>[39m
+              [0mCrear Proveedor[0m
+            [36m</h2>[39m
+            [36m<form>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mstyle[39m=[32m"font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;"[39m
+                [36m>[39m
+                  [0mDatos del Proveedor[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nit"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNIT: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nit"[39m
+                    [33mname[39m=[32m"nit"[39m
+                    [33mplaceholder[39m=[32m"NIT del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"900111222-3"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"nombre"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mNombre: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"nombre"[39m
+                    [33mname[39m=[32m"nombre"[39m
+                    [33mplaceholder[39m=[32m"Nombre de la empresa"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"Proveedor Nacional"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"correo_electronico"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mEmail: *[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"correo_electronico"[39m
+                    [33mname[39m=[32m"correo_electronico"[39m
+                    [33mplaceholder[39m=[32m"Email del proveedor"[39m
+                    [33mrequired[39m=[32m""[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"email"[39m
+                    [33mvalue[39m=[32m"ventas@nacional.com"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mfor[39m=[32m"numero_telefono"[39m
+                    [33mstyle[39m=[32m"display: block; margin-bottom: 8px; font-weight: bold;"[39m
+                  [36m>[39m
+                    [0mTeléfono:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mid[39m=[32m"numero_telefono"[39m
+                    [33mname[39m=[32m"numero_telefono"[39m
+                    [33mplaceholder[39m=[32m"Número de teléfono"[39m
+                    [33mstyle[39m=[32m"width: 100%; padding: 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: rgba(125, 125, 125, 0.1);"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"6019998877"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"display: flex; justify-content: center; gap: 25px;"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgba(0, 180, 0, 0.7); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"submit"[39m
+                [36m>[39m
+                  [0mCREAR[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mstyle[39m=[32m"background-color: rgb(217, 83, 79); color: white; padding: 15px 50px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; min-width: 150px;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mCANCELAR[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       98 |     });
+       99 |
+    > 100 |     const form = screen.getByText(/CREAR/i).closest('form');
+          |                         ^
+      101 |     fireEvent.submit(form);
+      102 |
+      103 |     expect(mockOnGuardar).toHaveBeenCalledWith({
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/Módulos/Proveedores/FormularioProveedor.test.jsx:100:25)
+
+PASS src/components/ListaProductos/ListaProductos.test.jsx
+  ● Console
+
+    console.error
+      An update to ListaProductos inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+      22 |
+      23 |       if (Array.isArray(respuesta)) {
+    > 24 |         setProductos(respuesta);
+         |         ^
+      25 |       } else if (respuesta.data && Array.isArray(respuesta.data)) {
+      26 |         setProductos(respuesta.data);
+      27 |       } else {
+
+      at node_modules/react-dom/cjs/react-dom-client.development.js:16023:19
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:1522:13)
+      at warnIfUpdatesNotWrappedWithActDEV (node_modules/react-dom/cjs/react-dom-client.development.js:16022:9)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:14396:11)
+      at dispatchSetStateInternal (node_modules/react-dom/cjs/react-dom-client.development.js:6969:13)
+      at dispatchSetState (node_modules/react-dom/cjs/react-dom-client.development.js:6927:7)
+      at setProductos (src/components/ListaProductos/ListaProductos.jsx:24:9)
+      at Generator.call (src/components/ListaProductos/ListaProductos.jsx:2:1)
+      at Generator._invoke [as next] (src/components/ListaProductos/ListaProductos.jsx:2:1)
+      at asyncGeneratorStep (src/components/ListaProductos/ListaProductos.jsx:2:1)
+      at asyncGeneratorStep (src/components/ListaProductos/ListaProductos.jsx:2:1)
+
+    console.error
+      An update to ListaProductos inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+      35 |       });
+      36 |     } finally {
+    > 37 |       setCargando(false);
+         |       ^
+      38 |     }
+      39 |   };
+      40 |
+
+      at node_modules/react-dom/cjs/react-dom-client.development.js:16023:19
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:1522:13)
+      at warnIfUpdatesNotWrappedWithActDEV (node_modules/react-dom/cjs/react-dom-client.development.js:16022:9)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:14396:11)
+      at dispatchSetStateInternal (node_modules/react-dom/cjs/react-dom-client.development.js:6969:13)
+      at dispatchSetState (node_modules/react-dom/cjs/react-dom-client.development.js:6927:7)
+      at setCargando (src/components/ListaProductos/ListaProductos.jsx:37:7)
+      at Generator.call (src/components/ListaProductos/ListaProductos.jsx:2:1)
+      at Generator._invoke [as next] (src/components/ListaProductos/ListaProductos.jsx:2:1)
+      at asyncGeneratorStep (src/components/ListaProductos/ListaProductos.jsx:2:1)
+      at asyncGeneratorStep (src/components/ListaProductos/ListaProductos.jsx:2:1)
+
+PASS src/components/PanelLateral/PanelLateral.test.js
+PASS src/services/productoService.test.js
+PASS src/components/FormularioProducto/FormularioProducto.test.js
+PASS src/components/Subcabecera/Subcabecera.test.js
+PASS src/services/authService.test.js
+PASS src/components/Cabecera/Cabecera.test.jsx
+
+Test Suites: 4 failed, 7 passed, 11 total
+Tests:       10 failed, 49 passed, 59 total
+Snapshots:   0 total
+Time:        6.743 s, estimated 12 s
+Ran all test suites.

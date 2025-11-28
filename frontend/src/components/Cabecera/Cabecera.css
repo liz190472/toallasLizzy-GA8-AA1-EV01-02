@@ -1,0 +1,10 @@
+.cabecera {
+    font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+    background-color: 'rgba(36, 104, 131, 0.9)';
+    color: 'white';
+}
+
+h1 {
+    padding: '1% 5%';
+    margin: 0;
+}

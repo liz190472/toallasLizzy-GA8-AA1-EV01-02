@@ -1,0 +1,80 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 35%;
+  font-size: 150%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.campoTexto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(125, 125, 125, 0.1);
+}
+
+.campoTexto img {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.campoTexto input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+}
+
+.campoBoton {
+  display: flex;
+  margin: 10px 0;
+}
+
+.botoninicioSesion {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botoninicioSesion:hover {
+  background-color: #0056b3;
+}
+
+.botonOlvidoContrasena {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.botonOlvidoContrasena:hover {
+  background-color: #007bff;
+  color: white;
+}

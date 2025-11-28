@@ -1,0 +1,79 @@
+body {
+    fontFamily: 'Verdana; Geneva; Tahoma; sans-serif';
+    backgroundColor: '#f4f4f4';
+    margin: 0;
+    padding: 0;
+}
+
+.panelFormulario {
+    display: 'flex';
+    flexDirection: 'row';
+    minHeight: 'calc(100vh - 150px)';
+}
+.container {
+    backgroundColor: '#fff';
+    padding: '30px';
+    margin: '20px';
+    flex: 1;
+    borderRadius: '8px';
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)';
+}
+form {
+    margin: '2% 5%';
+    fontSize: '14px';
+    backgroundColor: 'white';
+    padding: '20px';
+}
+.filaFormulario {
+    display: 'flex';
+    flexDirection: 'row';
+    margin: '2%';
+    gap: '20px';
+}
+.campo {
+    display: 'flex';
+    flexDirection: 'column';
+    margin: '2%';
+    minWidth: '30%';
+    flex: 1;
+}
+label {
+    marginBottom: '5px';
+    fontWeight: 'bold';
+    color: '#333';
+    fontSize: '14px';
+}
+input {
+    padding: '12px';
+    fontSize: '16px';
+    border: '1px solid #ddd';
+    borderRadius: '4px';
+    backgroundColor: 'rgba(125, 125, 125, 0.1)';
+}
+.botones {
+    display: 'flex';
+    flexDirection: 'row';
+    justifyContent: 'center';
+    marginTop: '30px';
+}
+.botonCrear {
+    backgroundColor: 'rgba(0, 180, 0, 0.7)';
+    padding: '15px 40px';
+    border: 'none';
+    borderRadius: '5px';
+    cursor: 'pointer';
+    fontWeight: 'bold';
+    color: 'white';
+    fontSize: '16px';
+    marginRight: '10px';
+};
+.botonCancelar {
+    backgroundColor: 'rgba(180, 0, 0, 0.7)';
+    padding: '15px 40px';
+    border: 'none';
+    borderRadius: '5px';
+    cursor: 'pointer';
+    fontWeight: 'bold';
+    color: 'white';
+    fontSize: '16px';
+}

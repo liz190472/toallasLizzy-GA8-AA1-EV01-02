@@ -1,0 +1,89 @@
+.cabecera {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(36, 104, 131, 0.9);
+  color: white;
+}
+
+h1 {
+  padding: 1% 5%;
+  margin: 0;
+}
+
+.cabeceraInicioSesion {
+  background-color: rgba(125, 125, 125, 0.5);
+  padding: 1% 40%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 35%;
+  font-size: 100%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.campoTexto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px 0;
+  gap: 10px;
+}
+
+.campoTexto img {
+  width: 30px;
+  height: 30px;
+}
+
+.campoTexto input {
+  flex: 1;
+  padding: 10px;
+  background-color: rgba(125, 125, 125, 0.3);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.campoBoton {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.botoninicioSesion {
+  padding: 12px 20px;
+  background-color: rgba(36, 104, 131, 0.9);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.botoninicioSesion:hover {
+  background-color: rgba(36, 104, 131, 1);
+}
+
+.botonOlvidoContrasena {
+  padding: 12px 20px;
+  background-color: rgba(200, 200, 200, 0.5);
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.botonOlvidoContrasena:hover {
+  background-color: rgba(200, 200, 200, 0.7);
+}

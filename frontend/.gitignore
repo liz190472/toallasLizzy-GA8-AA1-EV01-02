@@ -1,0 +1,81 @@
+# ============================================
+# DEPENDENCIAS Y NODE MODULES
+# ============================================
+/node_modules
+backend/node_modules/
+frontend/node_modules/
+/.pnp
+.pnp.js
+
+# ============================================
+# BACKEND (Laravel)
+# ============================================
+backend/vendor/
+backend/.env
+backend/.env.local
+backend/.env.*.local
+backend/storage/logs/
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/bootstrap/cache/
+backend/.phpunit.result.cache
+
+# ============================================
+# FRONTEND (React)
+# ============================================
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ============================================
+# TESTING
+# ============================================
+/coverage
+frontend/coverage/
+
+# ============================================
+# PRODUCTION
+# ============================================
+/build
+
+# ============================================
+# LOGS Y DEBUG
+# ============================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+backend/npm-debug.log*
+backend/yarn-error.log*
+*.log
+
+# ============================================
+# BACKUPS (NO SUBIR COPIAS DE SEGURIDAD)
+# ============================================
+*/src.backup/
+*/src.backup_*/
+*/backup/
+*.backup
+*.sql
+
+# ============================================
+# IDE y EDITORES
+# ============================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# ============================================
+# SISTEMA OPERATIVO
+# ============================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
